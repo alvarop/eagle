@@ -1,10 +1,10 @@
-*.b*
+*.b#*
 *.ger
 *.gpi
 *.dri
 *.xln
 *.mpd
 *.pro
-*.s*
+*.s#*
 *.epf
-*.l*
+*.l#*
