@@ -3502,6 +3502,8 @@ TS-003</description>
 <part name="U$3" library="alvaro" deviceset="CC2500-MODULE" device="" value=""/>
 <part name="JP2" library="SparkFun" deviceset="M04" device="PTH"/>
 <part name="LOGO1" library="ohw-logo" deviceset="OSHW_LOGO_10MIL" device="X0200-NT"/>
+<part name="R10" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0"/>
+<part name="R11" library="SparkFun" deviceset="RESISTOR" device="0805-RES" value="0"/>
 </parts>
 <sheets>
 <sheet>
@@ -3549,7 +3551,15 @@ TS-003</description>
 <instance part="GND6" gate="1" x="-34.29" y="74.93" rot="R90"/>
 <instance part="U$3" gate="G$1" x="-33.02" y="7.62"/>
 <instance part="JP2" gate="G$1" x="-151.13" y="68.58" rot="MR180"/>
-<instance part="LOGO1" gate="G$1" x="-45.72" y="60.96"/>
+<instance part="LOGO1" gate="G$1" x="-33.02" y="48.26"/>
+<instance part="R10" gate="G$1" x="-48.26" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="-44.45" y="64.5414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-52.07" y="69.342" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R11" gate="G$1" x="-48.26" y="60.96" smashed="yes" rot="R180">
+<attribute name="NAME" x="-44.45" y="59.4614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-52.07" y="64.262" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -3784,9 +3794,9 @@ TS-003</description>
 <pinref part="U$3" gate="G$1" pin="SI"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="14"/>
-<label x="-66.04" y="63.5" size="1.778" layer="95"/>
-<wire x1="-58.42" y1="63.5" x2="-66.04" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="60.96" x2="-40.64" y2="60.96" width="0.1524" layer="91"/>
+<label x="-40.64" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCLK" class="0">
@@ -3808,9 +3818,9 @@ TS-003</description>
 <pinref part="U$3" gate="G$1" pin="SO"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="15"/>
-<label x="-66.04" y="66.04" size="1.778" layer="95"/>
-<wire x1="-66.04" y1="66.04" x2="-58.42" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="66.04" x2="-40.64" y2="66.04" width="0.1524" layer="91"/>
+<label x="-40.64" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GDO2" class="0">
@@ -4027,9 +4037,30 @@ TS-003</description>
 <label x="-144.78" y="63.5" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="R10" gate="G$1" pin="2"/>
+<pinref part="U$2" gate="G$1" pin="15"/>
+<wire x1="-53.34" y1="66.04" x2="-66.04" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="2"/>
+<wire x1="-53.34" y1="60.96" x2="-55.88" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="-55.88" y1="60.96" x2="-55.88" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="14"/>
+<wire x1="-55.88" y1="63.5" x2="-66.04" y2="63.5" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="207,1,-78.74,22.86,VCC,sup,,,,"/>
+<approved hash="207,1,-93.726,119.38,VCC,out,,,,"/>
+<approved hash="207,1,-84.074,122.428,VCC,sup,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
